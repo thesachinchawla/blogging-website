@@ -2,7 +2,7 @@
     class Users extends MY_Controller {
 
         public function index(){
-            echo "Testing";
+         $this->load->view('Users/ArticleList');
         } 
 
     }
