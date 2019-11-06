@@ -14,27 +14,37 @@
 <body>
   <!-- header --> 
 <?php include ('header.php'); ?>
+<!-- end of header -->
+
 <div class = "container" style = "margin-top:20px" >
 <h1> Admin Form </h1>
 <?php echo form_open('Admin/index')?>
+
+<div class = "row" >
+  <div class = "col-lg-6">
   <div class="form-group">
     <label for="Username">Username :</label>
-    <?php echo form_input(['class'=> 'form-control','placeholder'=>'Enter username']); ?>
+    <?php echo form_input(['class'=> 'form-control','placeholder'=>'Enter username','name'=>'username']); ?>
   </div>
+  </div>
+</div>
+<div class = "row" >
+  <div class = "col-lg-6">
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <?php echo form_password(['class'=>'form-control','type'=> 'password','placeholder'=>'Enter password']); ?>
+    <?php echo form_password(['class'=>'form-control','type'=> 'password','placeholder'=>'Enter password', 'name'=>'password']); ?>
     </div>
+  </div>
+</div>
   <div class="form-group form-check">
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <?php echo form_submit(['class'=> 'btn btn-primary', 'type'=>'submit', 'value' => 'Submit']); ?>
 </form>
-
-
-
-    
+ <?php echo validation_errors(); ?>  
+ <footer>
+</footer> 
 </body>
 </html>
